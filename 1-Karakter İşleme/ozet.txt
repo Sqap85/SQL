@@ -1,0 +1,123 @@
+1. Büyük/Küçük Harf Dönüşüm Fonksiyonları:
+Bu fonksiyonlar, metin verilerini büyük veya küçük harfe dönüştürmek için kullanılır.
+
+LOWER:
+Açıklama: Bir karakter katarındaki tüm harfleri küçük harfe dönüştürür.
+
+Kullanım:
+
+SELECT LOWER('HELLO WORLD') FROM DUAL;
+Sonuç: hello world
+
+UPPER:
+Açıklama: Bir karakter katarındaki tüm harfleri büyük harfe dönüştürür.
+
+Kullanım:
+
+SELECT UPPER('hello world') FROM DUAL;
+Sonuç: HELLO WORLD
+
+INITCAP:
+Açıklama: Bir karakter katarındaki her kelimenin ilk harfini büyük harfe dönüştürür.
+
+Kullanım:
+
+SELECT INITCAP('hello world') FROM DUAL;
+Sonuç: Hello World
+
+2. Karakter İşleme Fonksiyonları:
+Bu fonksiyonlar, karakter dizilerini manipüle etmek için kullanılır.
+
+CONCAT:
+Açıklama: İki karakter katarını birleştirir.
+
+Kullanım:
+
+SELECT CONCAT('Hello', 'World') FROM DUAL;
+Sonuç: HelloWorld
+
+SUBSTR:
+Açıklama: Bir karakter katarının belirli bir bölümünü alır.
+
+Kullanım:
+
+SELECT SUBSTR('HelloWorld', 1, 5) FROM DUAL;
+Sonuç: Hello (1. karakterden başlayarak 5 karakter alır.)
+
+LENGTH:
+Açıklama: Bir karakter katarının uzunluğunu verir.
+
+Kullanım:
+
+SELECT LENGTH('HelloWorld') FROM DUAL;
+Sonuç: 10
+
+INSTR:
+Açıklama: Bir karakter katarında belirli bir karakterin pozisyonunu bulur.
+
+Kullanım:
+
+SELECT INSTR('HelloWorld', 'W') FROM DUAL;
+Sonuç: 6 ('W' karakteri 6. pozisyonda bulunur.)
+
+LPAD:
+Açıklama: Bir karakter katarını belirli bir uzunluğa tamamlamak için sol tarafını doldurur.
+
+Kullanım:
+
+SELECT LPAD('24000', 10, '*') FROM DUAL;
+Sonuç: *****24000 (Toplam 10 karakter olacak şekilde sol tarafı '*' ile doldurur.)
+
+RPAD:
+Açıklama: Bir karakter katarını belirli bir uzunluğa tamamlamak için sağ tarafını doldurur.
+
+Kullanım:
+
+SELECT RPAD('24000', 10, '*') FROM DUAL;
+Sonuç: 24000***** (Toplam 10 karakter olacak şekilde sağ tarafı '*' ile doldurur.)
+
+TRIM:
+Açıklama: Bir karakter katarının başındaki veya sonundaki belirli karakterleri kaldırır.
+
+Kullanım:
+
+SELECT TRIM('H' FROM 'HelloWorld') FROM DUAL;
+Sonuç: elloWorld (Baştaki 'H' karakteri kaldırılır.)
+
+REPLACE:
+Açıklama: Bir karakter katarındaki belirli bir karakter serisini başka bir karakter serisi ile değiştirir.
+
+Kullanım:
+
+SELECT REPLACE('JACK and JUE', 'J', 'BL') FROM DUAL;
+Sonuç: BLACK and BLUE ('J' karakterleri 'BL' ile değiştirilir.)
+
+3. DUAL Tablosu:
+Açıklama: DUAL tablosu, herhangi bir veritabanı tablosu ile ilişkili olmayan SELECT ifadeleri ve fonksiyonların çalıştırılması için kullanılır. Sonuç olarak sadece bir satır döner.
+
+Kullanım:
+
+SELECT 319/29 + 12 FROM DUAL;
+Sonuç: 23 (Hesaplama sonucu döner.)
+
+4. Değişim Değişkenleri:
+Açıklama: Değişim değişkenleri, farklı değerlerle aynı sorguyu çalıştırmak için kullanılır. Bu, sorguların daha esnek olmasını sağlar.
+
+Kullanım:
+
+SELECT first_name, last_name, salary, department_id
+FROM employees
+WHERE department_id = :dept_id;
+
+Açıklama: Bu sorgu çalıştırıldığında, :dept_id değişkeni için bir değer istenir. Örneğin, 10 girilirse, sadece department_id = 10 olan çalışanlar listelenir.
+
+5. Sütun Takma Adı Kullanma:
+Açıklama: Sorgu sonuçlarında sütun başlıklarını daha anlamlı hale getirmek için takma adlar kullanılabilir.
+
+Kullanım:
+
+SELECT LOWER(last_name) || LOWER(SUBSTR(first_name, 1, 1)) AS "User Name"
+FROM f_staffs;
+
+Sonuç: User Name sütunu altında, last_name küçük harfe dönüştürülür ve first_name'in ilk harfi küçük harfle birleştirilir.
+
