@@ -1,9 +1,0 @@
-SQL (Structured Query Language), veritabanlarını yönetmek ve veri işlemleri yapmak için kullanılan bir sorgulama dilidir. SQL ile veritabanlarında veri ekleme (INSERT), veri okuma (SELECT), veri güncelleme (UPDATE) ve veri silme (DELETE) gibi işlemler yapılabilir.
-
-SQL'in temel özellikleri şunlardır:
-
-Veri Manipülasyonu (DML - Data Manipulation Language): SELECT, INSERT, UPDATE, DELETE komutları ile veriler üzerinde işlemler yapar.
-Veri Tanımlama (DDL - Data Definition Language): CREATE, ALTER, DROP gibi komutlarla veritabanı ve tabloların yapısını tanımlar.
-Veri Kontrolü (DCL - Data Control Language): GRANT, REVOKE komutlarıyla erişim izinlerini yönetir.
-Veri Bütünlüğü ve Yönetimi: PRIMARY KEY, FOREIGN KEY, UNIQUE, CHECK gibi kısıtlamalar ile veri tutarlılığı sağlanır.
-SQL, MySQL, PostgreSQL, SQL Server, Oracle Database gibi birçok veritabanı yönetim sistemi tarafından desteklenir.
